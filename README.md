@@ -15,3 +15,9 @@ https://github.com/netblue30/firejail
 libseccomp
 
 https://github.com/seccomp/libseccomp
+
+## References
+
+Containers and Security: Seccomp
+
+https://blog.selectel.com/containers-security-seccomp/
