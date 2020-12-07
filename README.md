@@ -1,5 +1,11 @@
 # SCBox
 
+## libseccomp
+
+```
+sudo apt install -y libseccomp-dev
+```
+
 ## sandbox
 
 firejail
