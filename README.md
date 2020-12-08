@@ -21,3 +21,7 @@ https://github.com/seccomp/libseccomp
 Containers and Security: Seccomp
 
 https://blog.selectel.com/containers-security-seccomp/
+
+Seccomp sandboxes and memcached example, part 1
+
+https://blog.viraptor.info/post/seccomp-sandboxes-and-memcached-example-part-1
