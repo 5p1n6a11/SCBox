@@ -28,4 +28,4 @@ https://blog.viraptor.info/post/seccomp-sandboxes-and-memcached-example-part-1
 
 Seccomp sandboxes and memcached example, part 2
 
-https://blog.viraptor.info/tag/seccomp.html
+https://blog.viraptor.info/post/seccomp-sandboxes-and-memcached-example-part-2
