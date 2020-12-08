@@ -25,3 +25,7 @@ https://blog.selectel.com/containers-security-seccomp/
 Seccomp sandboxes and memcached example, part 1
 
 https://blog.viraptor.info/post/seccomp-sandboxes-and-memcached-example-part-1
+
+Seccomp sandboxes and memcached example, part 2
+
+https://blog.viraptor.info/tag/seccomp.html
