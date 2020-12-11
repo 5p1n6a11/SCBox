@@ -1,7 +1,7 @@
-#include <stdio.h>
-#include <sys/prctl.h>
-#include <linux/seccomp.h>
-#include <unistd.h>
+#include <stdio.h>          /* printf */
+#include <sys/prctl.h>      /* prctl */
+#include <linux/seccomp.h>  /* seccomp's constants */
+#include <unistd.h>         /* dup2: just for test */
 
 int main()
 {
