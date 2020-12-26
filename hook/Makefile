@@ -1,15 +1,7 @@
-KERNDIR := /lib/modules/`uname -r`/build
-BUILD_DIR := $(shell pwd)
-VERBOSE = 0
-
-obj-m := syscall_replace.o
-smallmod-objs := syscall_replace.o
+obj-m := syscall_hook.o
 
 all:
-	make -C $(KERNDIR) SUBDIRS=$(BUILD_DIR) KBUILD_VERBOSE=$(VERBOSE) modules
+	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
 
 clean:
-	rm -f *.o
-	rm -f *.ko
-	rm -f *.mod.c
-	rm -f *~
+	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean

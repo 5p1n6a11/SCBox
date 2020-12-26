@@ -1,5 +1,9 @@
-#define <linux/module.h>
-#define <linux/kernel.h>
+#include <linux/module.h>
+#include <linux/kernel.h>
+#include <linux/unistd.h>
+#include <linux/utsname.h>
+#include <asm/pgtable.h>
+#include <linux/kallsyms.h>
 
 MODULE_DESCRIPTION("system call replace test module");
 MODULE_AUTHOR("u2i");
@@ -22,7 +26,7 @@ static void save_original_syscall_address(void)
 
 static void change_page_attr_to_rw(pte_t *pte)
 {
-    set_pte_atomic(pte, pte_mkwrite(*pte);
+    set_pte_atomic(pte, pte_mkwrite(*pte));
 }
 
 static void change_page_attr_to_ro(pte_t *pte)
@@ -46,7 +50,7 @@ static void replace_system_call(void *new)
 
 static int syscall_replace_init(void)
 {
-    sys_call_table = (void *) kallsysms_lookup_name("sys_call_table");
+    sys_call_table = (void *) kallsyms_lookup_name("sys_call_table");
     pr_info("sys_call_table address is 0x%p\n", sys_call_table);
 
     save_original_syscall_address();
@@ -66,4 +70,4 @@ static void syscall_replace_cleanup(void)
 }
 
 module_init(syscall_replace_init);
-module_exit(syscall_replace_exit);
+module_exit(syscall_replace_cleanup);
