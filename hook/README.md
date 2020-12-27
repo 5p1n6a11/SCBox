@@ -17,3 +17,5 @@ ausyscall x86_64 --dump | awk '{print $2}' | sed 's/[^ ]\+/\t"&",/g'
 https://itchyny.hatenablog.com/entry/2017/07/31/090000
 
 https://blog.ssrf.in/post/follow-system-call-with-ptrace/
+
+http://blog.livedoor.jp/sonots/archives/50135985.html
