@@ -23,3 +23,7 @@ https://blog.viraptor.info/post/seccomp-sandboxes-and-memcached-example-part-2
 Introduction to seccomp: BPF linux syscall filter
 
 https://blog.yadutaf.fr/2014/05/29/introduction-to-seccomp-bpf-linux-syscall-filter/
+
+mode 2 seccompの話 - yuzuharaの日記
+
+http://yuzuhara.hatenablog.jp/entry/2013/12/12/223537
