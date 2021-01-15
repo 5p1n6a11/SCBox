@@ -4,6 +4,7 @@
 #include <linux/utsname.h>
 #include <asm/pgtable.h>
 #include <linux/kprobes.h>
+#include <linux/kallsyms.h>
 
 MODULE_DESCRIPTION("system call replace test module");
 MODULE_AUTHOR("u2i");
@@ -49,14 +50,17 @@ static void replace_system_call(void *new)
 }
 
 static struct kprobe kp = {
-    .symbol_name = "sys_call_table"
+    .symbol_name = "kallsyms_lookup_name"
 };
+
+static unsigned long (*kallsyms_lookup_name_addr)(const char *name);
 
 static int syscall_replace_init(void)
 {
     register_kprobe(&kp);
-    syscall_table = (void *) kp.addr;
+    kallsyms_lookup_name_addr = (void *) kp.addr;
     unregister_kprobe(&kp);
+    syscall_table = (void *) kallsyms_lookup_name_addr("sys_call_table");
     pr_info("sys_call_table address is 0x%p\n", syscall_table);
 
     save_original_syscall_address();
